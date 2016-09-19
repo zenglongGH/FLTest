@@ -1,0 +1,5 @@
+*.pyc
+*.tlog
+*.raw
+*.log
+jigstate.json
