@@ -1,4 +1,4 @@
-# Factory load firmware and test 
+# Factory load firmware and test
 
 This is a firmware loader and factory test tool. It is designed to load firmware 
 on a Pixhawk2 in a factory, and test sensors and other peripherals for correct operation.

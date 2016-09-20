@@ -9,8 +9,8 @@ import os, sys
 GDB="arm-none-eabi-gdb"
 
 # serial numbers of black magic probes in the various test jigs
-FMU_BMAGIC_SERIAL=[ "B5D9B0CD", "B5DFB7C6","B5DDB0F0","B5DDB0D6","B5DCB0E4" ]
-IO_BMAGIC_SERIAL=[ "B5DBB0CE", "B5DDB7C5", "B5DAB7D3","B5DDB0E3","B5DEB0F1" ]
+FMU_BMAGIC_SERIAL=[ "000059103300", "B5DFB7C6","B5DDB0F0","B5DDB0D6","B5DCB0E4" ]
+IO_BMAGIC_SERIAL=[ "000059103300", "B5DDB7C5", "B5DAB7D3","B5DDB0E3","B5DEB0F1" ]
 
 # serial numbers of the barcode scanners
 BARCODE_SCANNER_SERIAL=[ "16C0_XXXXXX" ]
@@ -30,7 +30,7 @@ USB_DEV_TEST="/dev/serial/by-id/usb-3D_Robotics_PX4_FMU_v2.x_0-if00"
 USB_DEV_REFERENCE="/dev/serial/by-id/usb-3D_Robotics_PH_REFERENCE_0-if00"
 
 # there must be exactly one FTDI device
-FTDI_POWER="/dev/serial/by-id/usb-FTDI_FT*"
+FTDI_POWER="/dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller*"
 
 # file containing factory parameters to load
 FACTORY_PARM="FW/factory.parm"
@@ -99,12 +99,12 @@ IDLE_MODES = ["RTL","CIRCLE","MANUAL","STABILIZE","LOITER"]
 FMU_JTAG = None
 IO_JTAG = None
 for id in FMU_BMAGIC_SERIAL:
-    p = "/dev/serial/by-id/usb-Black_Sphere_Technologies_Black_Magic_Probe_%s-if00" % id
+    p = "/dev/serial/by-id/usb-SEGGER_J-Link_%s-if00" % id
     if os.path.exists(p):
         FMU_JTAG = p
-        FMU_DEBUG="/dev/serial/by-id/usb-Black_Sphere_Technologies_Black_Magic_Probe_%s-if02" % id
+        FMU_DEBUG="/dev/serial/by-id/usb-SEGGER_J-Link_%s-if02" % id
 for id in IO_BMAGIC_SERIAL:
-    p = "/dev/serial/by-id/usb-Black_Sphere_Technologies_Black_Magic_Probe_%s-if00" % id
+    p = "/dev/serial/by-id/usb-SEGGER_J-Link_%s-if00" % id
     if os.path.exists(p):
         IO_JTAG = p
 
